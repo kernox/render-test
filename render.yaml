@@ -39,4 +39,10 @@ services:
     plan: free
     image:
       url: tooljet/tooljet-ce
+    envVars:
+      - key: TOOLJET_HOST
+        fromService:
+          name: tooljet
+          type: pserv
+          property: host
     region: frankfurt

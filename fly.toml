@@ -1,0 +1,65 @@
+# fly.toml configuration for deploying n8n, NocoDB, and ToolJet on Fly.io
+
+app = "demo"  # Nom de l'application Fly.io
+
+[[services]]
+  internal_port = 5678
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [env]
+    N8N_BASIC_AUTH_ACTIVE = "true"
+    N8N_BASIC_AUTH_USER = "admin"
+    N8N_BASIC_AUTH_PASSWORD = "admin"
+    N8N_HOST = "https://${FLY_APP_NAME}.fly.dev"  # URL Fly.io générée automatiquement
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [env]
+    NC_HOST = "https://${FLY_APP_NAME}.fly.dev"
+
+[[services]]
+  internal_port = 3000
+  protocol = "tcp"
+
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [env]
+    TOOLJET_HOST = "https://${FLY_APP_NAME}.fly.dev"  # URL Fly.io générée automatiquement
+    DATABASE_URL = "postgres://username:password@postgres.example.com:5432/tooljetdb"
+    REDIS_URL = "redis://redis.example.com:6379"

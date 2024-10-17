@@ -53,7 +53,7 @@ services:
     runtime: image
     plan: free
     image:
-      url: appsmith/appsmith-ce
+      url: bitnami/appsmith
     domains:
       - demo.appsmith.nenkod.com
     region: frankfurt

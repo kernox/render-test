@@ -8,6 +8,8 @@ services:
     plan: free
     image: 
       url: n8nio/n8n:latest
+    domains:
+      - demo.n8n.nenkod.com
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: true
@@ -19,7 +21,7 @@ services:
         value: "admin"
 
       - key: N8N_HOST
-        value: "https://n8n.yourdomain.com"
+        value: "https://demo.n8n.nenkod.com"
       
     autoDeploy: true
     healthCheckPath: "/"

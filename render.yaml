@@ -1,0 +1,56 @@
+# render.yaml configuration for Baserow, n8n, and ToolJet in Frankfurt region
+
+services:
+  # - name: baserow
+  #   type: web
+  #   env: docker
+  #   plan: standard
+  #   image: baserow/baserow:1.12.0  # Image Docker officielle de Baserow
+  #   envVars:
+  #     DATABASE_URL: "postgres://username:password@hostname:5432/dbname"
+  #     REDIS_URL: "redis://hostname:6379"
+  #   autoDeploy: true
+  #   healthCheckPath: "/api/health"
+  #   disk:
+  #     name: baserow-data
+  #     sizeGB: 5
+  #   region: frankfurt
+
+  - name: n8n
+    type: web
+    env: docker
+    plan: standard
+    image: n8nio/n8n:latest  # Image Docker officielle de n8n
+    envVars:
+      N8N_BASIC_AUTH_ACTIVE: "true"
+      N8N_BASIC_AUTH_USER: "admin"
+      N8N_BASIC_AUTH_PASSWORD: "your_password"
+      N8N_HOST: "https://n8n.yourdomain.com"
+      DB_TYPE: "postgresdb"
+      DB_POSTGRESDB_HOST: "hostname"
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: "n8n-db"
+      DB_POSTGRESDB_USER: "username"
+      DB_POSTGRESDB_PASSWORD: "password"
+    autoDeploy: true
+    healthCheckPath: "/"
+    disk:
+      name: n8n-data
+      sizeGB: 5
+    region: frankfurt
+
+  # - name: tooljet
+  #   type: web
+  #   env: docker
+  #   plan: standard
+  #   image: tooljet/tooljet:latest  # Image Docker officielle de ToolJet
+  #   envVars:
+  #     DATABASE_URL: "postgres://username:password@hostname:5432/tooljetdb"
+  #     REDIS_URL: "redis://hostname:6379"
+  #     JWT_SECRET: "your_jwt_secret"
+  #   autoDeploy: true
+  #   healthCheckPath: "/"
+  #   disk:
+  #     name: tooljet-data
+  #     sizeGB: 5
+  #   region: frankfurt

@@ -24,3 +24,11 @@ services:
     autoDeploy: true
     healthCheckPath: "/"
     region: frankfurt
+
+  - name: nocodb
+    type: web
+    runtime: image
+    plan: free
+    image:
+      url: nocodb/nocodb:latest
+    region: frankfurt

@@ -21,7 +21,7 @@ services:
         value: "admin"
 
       - key: N8N_HOST
-        value: "https://demo.n8n.nenkod.com"
+        value: "demo.n8n.nenkod.com"
       
     autoDeploy: true
     healthCheckPath: "/"

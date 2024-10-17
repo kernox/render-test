@@ -41,7 +41,9 @@ services:
     plan: free
     image:
       url: tooljet/tooljet-ce
+    domains:
+      - demo.tooljet.nenkod.com
     envVars:
       - key: TOOLJET_HOST
-        value: "${RENDER_EXTERNAL_URL}"
+        value: "demo.tooljet.nenkod.com"
     region: frankfurt

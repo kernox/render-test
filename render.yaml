@@ -48,7 +48,7 @@ services:
         value: https://demo.tooljet.nenkod.com
     region: frankfurt
   
-  - name: appsmith2
+  - name: appsmith
     type: web
     runtime: image
     plan: free
@@ -56,4 +56,12 @@ services:
       url: bitnami/appsmith
     domains:
       - demo.appsmith.nenkod.com
+    region: frankfurt
+
+  - name: mongo
+    type: web
+    runtime: image
+    plan: free
+    image:
+      url: mongo
     region: frankfurt

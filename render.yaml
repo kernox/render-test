@@ -48,7 +48,7 @@ services:
         value: https://demo.tooljet.nenkod.com
     region: frankfurt
   
-  - name: appsmith
+  - name: appsmith2
     type: web
     runtime: image
     plan: free

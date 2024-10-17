@@ -46,6 +46,14 @@ services:
     envVars:
       - key: TOOLJET_HOST
         value: https://demo.tooljet.nenkod.com
-      - key: TOOLJET_PORT
-        value: 80
+    region: frankfurt
+  
+  - name: appsmith
+    type: web
+    runtime: image
+    plan: free
+    image:
+      url: appsmith/appsmith-ce
+    domains:
+      - demo.appsmith.nenkod.com
     region: frankfurt

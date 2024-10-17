@@ -2,6 +2,9 @@
 
 app = "demo"  # Nom de l'application Fly.io
 
+[deploy]
+  region = "fra"  # Code de la région Frankfurt
+
 [[services]]
   internal_port = 5678
   protocol = "tcp"

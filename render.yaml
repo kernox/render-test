@@ -9,17 +9,17 @@ services:
     image: 
       url: n8nio/n8n:latest
     envVars:
-      -key: N8N_BASIC_AUTH_ACTIVE
-       value: true
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
 
-      -key: N8N_BASIC_AUTH_USER
-       value: "admin"
+      - key: N8N_BASIC_AUTH_USER
+        value: "admin"
 
-      -key: N8N_BASIC_AUTH_PASSWORD
-       value: "admin"
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: "admin"
 
-      -key: N8N_HOST
-       value: "https://n8n.yourdomain.com"
+      - key: N8N_HOST
+        value: "https://n8n.yourdomain.com"
       
     autoDeploy: true
     healthCheckPath: "/"

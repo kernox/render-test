@@ -32,3 +32,11 @@ services:
     image:
       url: nocodb/nocodb:latest
     region: frankfurt
+
+  - name: tooljet
+    type: web
+    runtime: image
+    plan: free
+    image:
+      url: tooljet/tooljet-ce
+    region: frankfurt

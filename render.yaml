@@ -23,7 +23,4 @@ services:
       
     autoDeploy: true
     healthCheckPath: "/"
-    disk:
-      name: n8n-data
-      sizeGB: 5
     region: frankfurt

@@ -9,16 +9,18 @@ services:
     image: 
       url: n8nio/n8n:latest
     envVars:
-      N8N_BASIC_AUTH_ACTIVE: "true"
-      N8N_BASIC_AUTH_USER: "admin"
-      N8N_BASIC_AUTH_PASSWORD: "your_password"
-      N8N_HOST: "https://n8n.yourdomain.com"
-      DB_TYPE: "postgresdb"
-      DB_POSTGRESDB_HOST: "hostname"
-      DB_POSTGRESDB_PORT: 5432
-      DB_POSTGRESDB_DATABASE: "n8n-db"
-      DB_POSTGRESDB_USER: "username"
-      DB_POSTGRESDB_PASSWORD: "password"
+      -key: N8N_BASIC_AUTH_ACTIVE
+       value: true
+
+      -key: N8N_BASIC_AUTH_USER
+       value: "admin"
+
+      -key: N8N_BASIC_AUTH_PASSWORD
+       value: "admin"
+
+      -key: N8N_HOST
+       value: "https://n8n.yourdomain.com"
+      
     autoDeploy: true
     healthCheckPath: "/"
     disk:

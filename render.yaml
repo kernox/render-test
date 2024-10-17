@@ -44,6 +44,8 @@ services:
     domains:
       - demo.tooljet.nenkod.com
     envVars:
+      - key: APP_HOST
+        value: demo.tooljet.nenkod.com
       - key: APP_PORT
         value: 80
     region: frankfurt

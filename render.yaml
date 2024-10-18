@@ -46,6 +46,8 @@ services:
     envVars:
       - key: TOOLJET_HOST
         value: https://demo.tooljet.nenkod.com
+      - key: PORT
+        value: "80"
       - key: SECRET_KEY_BASE
         value: "55f07fde92352b48840033bfc7820061594cb6a616ea852e9d83e1130cc0ac403e593002f305ff93fb14538cc720dfac17afcf78ecc7f4f6132880a5e25224ca"
     region: frankfurt

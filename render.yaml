@@ -44,6 +44,8 @@ services:
     domains:
       - demo.tooljet.nenkod.com
     envVars:
+      - key: SERVE_CLIENT
+        value: true
       - key: TOOLJET_HOST
         value: https://demo.tooljet.nenkod.com
       - key: PORT

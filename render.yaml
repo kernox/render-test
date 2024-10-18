@@ -40,7 +40,7 @@ services:
     runtime: image
     plan: free
     image:
-      url: tooljet/tooljet-ce
+      url: tooljet/tooljet:EE-LTS-latest
     domains:
       - demo.tooljet.nenkod.com
     envVars:

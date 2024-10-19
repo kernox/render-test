@@ -61,6 +61,12 @@ databases:
     plan: free
     region: frankfurt
   
+  - name: pg_n8n
+    databaseName: n8n
+    user: kernox
+    plan: free
+    region: frankfurt
+  
   # - name: appsmith
   #   type: web
   #   runtime: image

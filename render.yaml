@@ -35,17 +35,25 @@ services:
       url: nocodb/nocodb:latest
     region: frankfurt
 
+  - name: baserow
+    type: web
+    runtime: image
+    plan: free
+    image: 
+      url: baserow/baserow
+    region: frankfurt
+
   - name: tooljet
     type: web
     runtime: image
     plan: free
     image:
-      url: tooljet/tooljet:EE-LTS-latest
+      url: tooljet/tooljet-ce
     domains:
       - demo.tooljet.nenkod.com
     envVars:
       - key: SERVE_CLIENT
-        value: true
+        value: "true"
       - key: TOOLJET_HOST
         value: https://demo.tooljet.nenkod.com
       - key: PORT

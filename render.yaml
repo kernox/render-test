@@ -51,6 +51,7 @@ services:
       url: tooljet/tooljet-ce
     domains:
       - demo.tooljet.nenkod.com
+    startCommand: npm run start:prod
     envVars:
       - key: SERVE_CLIENT
         value: "true"

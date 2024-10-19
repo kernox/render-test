@@ -59,6 +59,7 @@ databases:
     databaseName: tooljet
     user: kernox
     plan: free
+    region: frankfurt
   
   # - name: appsmith
   #   type: web

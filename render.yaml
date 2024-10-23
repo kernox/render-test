@@ -2,7 +2,7 @@
 
 services:
 
-  - name: n8n
+  - key: n8n
     type: web
     runtime: image
     plan: free
@@ -27,7 +27,7 @@ services:
     healthCheckPath: "/"
     region: frankfurt
 
-  - name: nocodb
+  - key: nocodb
     type: web
     runtime: image
     plan: free
@@ -35,7 +35,7 @@ services:
       url: nocodb/nocodb:latest
     region: frankfurt
 
-  - name: baserow
+  - key: baserow
     type: web
     runtime: image
     plan: free
@@ -43,7 +43,7 @@ services:
       url: baserow/baserow
     region: frankfurt
 
-  - name: tooljet
+  - key: tooljet
     type: web
     runtime: image
     plan: free
@@ -53,63 +53,63 @@ services:
       - demo.tooljet.nenkod.com
     startCommand: npm run start:prod
     envVars:
-      - name: TOOLJET_HOST
+      - key: TOOLJET_HOST
         value: "http://localhost:80"
-      - name: PORT
+      - key: PORT
         value: "80"
-    #   - name: ENABLE_TOOLJET_DB
-    #     value: "true"
-    #   - name: TOOLJET_DB_HOST
-    #     value: "postgres"
-    #   - name: TOOLJET_DB_USER
-    #     value: "postgres"
-    #   - name: TOOLJET_DB_PASS
-    #     value: "toor"
-    #   - name: LOCKBOX_MASTER_KEY
-    #     value: "dd64062b41ee862109c1b92997853a32e93ed0cd33266c3defea5d47a653e018"
-    #   - name: SECRET_KEY_BASE
-    #     value: "55f07fde92352b48840033bfc7820061594cb6a616ea852e9d83e1130cc0ac403e593002f305ff93fb14538cc720dfac17afcf78ecc7f4f6132880a5e25224ca"
-    #   - name: PG_HOST
-    #     value: "postgres"
-    #   - name: PG_DB
-    #     value: "postgres"
-    #   - name: PG_USER
-    #     value: "postgres"
-    #   - name: PG_PASS
-    #     value: "toor"
-    #   - name: PG_PORT
-    #     value: "5432"
-    #   - name: DEFAULT_FROM_EMAIL
-    #     value: "noreply@nenkod.com"
-    #   - name: DISABLE_SIGNUPS
-    #     value: "true"
-    #   - name: SMTP_USERNAME
-    #     value: "noreply@nenkod.com"
-    #   - name: SMTP_PASSWORD
-    #     value: "Psychose1985@"
-    #   - name: SMTP_DOMAIN
-    #     value: "mail.nenkod.com"
-    #   - name: SMTP_PORT
-    #     value: "465"
-    #   - name: LANGUAGE
-    #     value: "fr"
+      - key: ENABLE_TOOLJET_DB
+        value: "true"
+      - key: TOOLJET_DB_HOST
+        value: "postgres"
+      - key: TOOLJET_DB_USER
+        value: "postgres"
+      - key: TOOLJET_DB_PASS
+        value: "toor"
+      - key: LOCKBOX_MASTER_KEY
+        value: "dd64062b41ee862109c1b92997853a32e93ed0cd33266c3defea5d47a653e018"
+      - key: SECRET_KEY_BASE
+        value: "55f07fde92352b48840033bfc7820061594cb6a616ea852e9d83e1130cc0ac403e593002f305ff93fb14538cc720dfac17afcf78ecc7f4f6132880a5e25224ca"
+      - key: PG_HOST
+        value: "postgres"
+      - key: PG_DB
+        value: "postgres"
+      - key: PG_USER
+        value: "postgres"
+      - key: PG_PASS
+        value: "toor"
+      - key: PG_PORT
+        value: "5432"
+      - key: DEFAULT_FROM_EMAIL
+        value: "noreply@nenkod.com"
+      - key: DISABLE_SIGNUPS
+        value: "true"
+      - key: SMTP_USERkey
+        value: "noreply@nenkod.com"
+      - key: SMTP_PASSWORD
+        value: "Psychose1985@"
+      - key: SMTP_DOMAIN
+        value: "mail.nenkod.com"
+      - key: SMTP_PORT
+        value: "465"
+      - key: LANGUAGE
+        value: "fr"
   
     region: frankfurt
   
 databases:
-  - name: pg_tooljet
-    databaseName: tooljet
+  - key: pg_tooljet
+    databasekey: tooljet
     user: kernox
     plan: free
     region: frankfurt
   
-  - name: pg_n8n
-    databaseName: n8n
+  - key: pg_n8n
+    databasekey: n8n
     user: kernox
     plan: free
     region: frankfurt
   
-  # - name: appsmith
+  # - key: appsmith
   #   type: web
   #   runtime: image
   #   plan: free
@@ -119,7 +119,7 @@ databases:
   #     - demo.appsmith.nenkod.com
   #   region: frankfurt
 
-  # - name: mongo
+  # - key: mongo
   #   type: web
   #   runtime: image
   #   plan: free

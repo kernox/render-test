@@ -82,13 +82,15 @@ services:
       - key: PG_PASS
         sync: false
       - key: PG_USER
-        sync: kernox
+        value: kernox
       - key: SECRET_KEY_BASE
-        sync: false
+        generatedValue: true
       - key: LOCKBOX_MASTER_KEY
         generatedValue: true
       - key: TOOLJET_DB_PASS
-        sync: false
+        fromDatabase:
+          name: pg_common
+          property: passwordString
       - key: ENABLE_TOOLJET_DB
         sync: false
       - key: TOOLJET_HOST

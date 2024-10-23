@@ -98,7 +98,7 @@ services:
   
 databases:
   - name: pg_tooljet
-    databasename: tooljet
+    databaseName: tooljet
     user: kernox
     plan: free
     region: frankfurt

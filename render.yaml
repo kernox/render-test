@@ -54,7 +54,7 @@ services:
       - key: TOOLJET_DB_HOST
         fromDatabase:
           name: pg_common
-          property: connectionString
+          property: host
       - key: PORT
         value: 80
       - key: PG_PORT
@@ -62,7 +62,7 @@ services:
       - key: PG_HOST
         fromDatabase:
           name: pg_common
-          property: connectionString
+          property: host
       - key: PG_DB
         value: tooljet
       - key: LANGUAGE
@@ -90,7 +90,7 @@ services:
       - key: TOOLJET_DB_PASS
         fromDatabase:
           name: pg_common
-          property: passwordString
+          property: password
       - key: ENABLE_TOOLJET_DB
         sync: false
       - key: TOOLJET_HOST

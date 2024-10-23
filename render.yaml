@@ -85,10 +85,10 @@ services:
           property: password
       - key: PG_USER
         value: kernox
-      # - key: SECRET_KEY_BASE
-      #   generatedValue: true
-      # - key: LOCKBOX_MASTER_KEY
-      #   generatedValue: true
+      - key: SECRET_KEY_BASE
+        generatedValue: true
+      - key: LOCKBOX_MASTER_KEY
+        generatedValue: true
       - key: TOOLJET_DB_PASS
         fromDatabase:
           name: pg_common

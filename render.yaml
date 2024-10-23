@@ -45,7 +45,10 @@ services:
         value: "admin"
 
       - key: N8N_HOST
-        value: "demo.n8n.nenkod.com"
+        fromService:
+          name: n8n
+          type: web
+          property: host
       
     autoDeploy: true
     healthCheckPath: "/"
@@ -65,8 +68,6 @@ services:
     plan: free
     image:
       url: tooljet/tooljet-ce
-    domains:
-      - demo.tooljet.nenkod.com
     startCommand: npm run start:prod
     envVars:
       - key: TOOLJET_DB_USER

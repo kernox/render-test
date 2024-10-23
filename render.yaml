@@ -74,7 +74,9 @@ services:
       - key: TOOLJET_DB_USER
         value: kernox
       - key: TOOLJET_DB
-        value: tooljet
+        fromDatabase:
+          name: pg_tooljet
+          property: database
       - key: TOOLJET_DB_HOST
         fromDatabase:
           name: pg_tooljet

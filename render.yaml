@@ -58,7 +58,7 @@ services:
       - key: PG_PORT
         value: 5432
       - key: PG_HOST
-        sync: pg_common
+        value: pg_common
       - key: PG_DB
         value: tooljet
       - key: LANGUAGE

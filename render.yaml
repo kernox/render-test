@@ -1,15 +1,38 @@
 # render.yaml configuration for Baserow, n8n, and ToolJet in Frankfurt region
 
 services:
+  - name: web
+    type: web
+    runtime: image
+    plan: free
+    image:
+      url: nginx:latest
+    domains:
+      - demo.nenkod.com
+    envVars:
+      - key: N8N_CONTAINER_URL
+        fromService:
+          name: n8n
+          type: web
+          property: host
 
+      - key: NOCODB_CONTAINER_URL
+        fromService:
+          name: nocodb
+          type: web
+          property: host
+
+      - key: TOOLJET_CONTAINER_URL
+        name: tooljet
+        type: web
+        property: host
+    
   - name: n8n
     type: web
     runtime: image
     plan: free
     image: 
       url: n8nio/n8n:latest
-    domains:
-      - demo.n8n.nenkod.com
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: true
@@ -33,8 +56,6 @@ services:
     plan: free
     image:
       url: nocodb/nocodb:latest
-    domains:
-      - demo.nocodb.nenkod.com
     region: frankfurt
 
   - name: tooljet
@@ -103,7 +124,7 @@ services:
     region: frankfurt
   
 databases:
-  - name: pg_common
+  - name: pg_tooljet
     databaseName: tooljet
     user: kernox
     plan: free

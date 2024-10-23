@@ -52,11 +52,11 @@ services:
     domains:
       - demo.tooljet.nenkod.com
     startCommand: npm run start:prod
-    # envVars:
-    #   - name: TOOLJET_HOST
-    #     value: "http://localhost:80"
-    #   - name: PORT
-    #     value: "80"
+    envVars:
+      - name: TOOLJET_HOST
+        value: "http://localhost:80"
+      - name: PORT
+        value: "80"
     #   - name: ENABLE_TOOLJET_DB
     #     value: "true"
     #   - name: TOOLJET_DB_HOST

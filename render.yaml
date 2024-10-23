@@ -23,9 +23,10 @@ services:
           property: host
 
       - key: TOOLJET_CONTAINER_URL
-        name: tooljet
-        type: web
-        property: host
+        fromService:
+          name: tooljet
+          type: web
+          property: host
     
   - name: n8n
     type: web

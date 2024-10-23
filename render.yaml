@@ -2,7 +2,7 @@
 
 services:
 
-  - key: n8n
+  - name: n8n
     type: web
     runtime: image
     plan: free
@@ -27,7 +27,7 @@ services:
     healthCheckPath: "/"
     region: frankfurt
 
-  - key: nocodb
+  - name: nocodb
     type: web
     runtime: image
     plan: free
@@ -35,7 +35,7 @@ services:
       url: nocodb/nocodb:latest
     region: frankfurt
 
-  - key: baserow
+  - name: baserow
     type: web
     runtime: image
     plan: free
@@ -43,7 +43,7 @@ services:
       url: baserow/baserow
     region: frankfurt
 
-  - key: tooljet
+  - name: tooljet
     type: web
     runtime: image
     plan: free
@@ -97,14 +97,8 @@ services:
     region: frankfurt
   
 databases:
-  - key: pg_tooljet
+  - name: pg_tooljet
     databasekey: tooljet
-    user: kernox
-    plan: free
-    region: frankfurt
-  
-  - key: pg_n8n
-    databasekey: n8n
     user: kernox
     plan: free
     region: frankfurt

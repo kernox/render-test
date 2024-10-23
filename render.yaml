@@ -80,7 +80,9 @@ services:
       - key: DEFAULT_FROM_EMAIL
         value: webmaster@nenkod.com
       - key: PG_PASS
-        sync: false
+        fromDatabase:
+          name: pg_common
+          property: password
       - key: PG_USER
         value: kernox
       # - key: SECRET_KEY_BASE

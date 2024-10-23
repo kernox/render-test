@@ -64,7 +64,9 @@ services:
           name: pg_common
           property: host
       - key: PG_DB
-        value: tooljet
+        fromDatabase:
+          name: pg_common
+          property: database
       - key: LANGUAGE
         value: fr
       - key: SMTP_PORT

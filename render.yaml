@@ -94,9 +94,9 @@ services:
           name: pg_common
           property: password
       - key: ENABLE_TOOLJET_DB
-        sync: false
+        value: true
       - key: TOOLJET_HOST
-        sync: false  
+        value: http://demo.tooljet.nenkod.com  
     dockerCommand: npm run start:prod
     region: frankfurt
   

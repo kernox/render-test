@@ -52,13 +52,17 @@ services:
       - key: TOOLJET_DB
         value: tooljet
       - key: TOOLJET_DB_HOST
-        sync: false
+        fromDatabase:
+          name: pg_common
+          property: connectionString
       - key: PORT
         value: 80
       - key: PG_PORT
         value: 5432
       - key: PG_HOST
-        value: pg_common
+        fromDatabase:
+          name: pg_common
+          property: connectionString
       - key: PG_DB
         value: tooljet
       - key: LANGUAGE
@@ -72,17 +76,17 @@ services:
       - key: SMTP_USERkey
         sync: false
       - key: DISABLE_SIGNUPS
-        sync: false
+        value: false
       - key: DEFAULT_FROM_EMAIL
-        sync: false
+        value: webmaster@nenkod.com
       - key: PG_PASS
         sync: false
       - key: PG_USER
-        sync: false
+        sync: kernox
       - key: SECRET_KEY_BASE
         sync: false
       - key: LOCKBOX_MASTER_KEY
-        sync: false
+        generatedValue: true
       - key: TOOLJET_DB_PASS
         sync: false
       - key: ENABLE_TOOLJET_DB

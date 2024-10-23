@@ -48,21 +48,21 @@ services:
     startCommand: npm run start:prod
     envVars:
       - key: TOOLJET_DB_USER
-        sync: false
+        value: kernox
       - key: TOOLJET_DB
-        sync: false
+        value: tooljet
       - key: TOOLJET_DB_HOST
         sync: false
       - key: PORT
-        sync: false
+        value: 80
       - key: PG_PORT
-        sync: false
+        value: 5432
       - key: PG_HOST
-        sync: false
+        sync: pg_common
       - key: PG_DB
-        sync: false
+        value: tooljet
       - key: LANGUAGE
-        sync: false
+        value: fr
       - key: SMTP_PORT
         sync: false
       - key: SMTP_DOMAIN

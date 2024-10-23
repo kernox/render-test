@@ -68,13 +68,13 @@ services:
       - key: LANGUAGE
         value: fr
       - key: SMTP_PORT
-        sync: false
+        value: 587
       - key: SMTP_DOMAIN
-        sync: false
+        value: mail.nenkod.com
       - key: SMTP_PASSWORD
-        sync: false
+        value: blabla
       - key: SMTP_USERkey
-        sync: false
+        value: contact
       - key: DISABLE_SIGNUPS
         value: false
       - key: DEFAULT_FROM_EMAIL
